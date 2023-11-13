@@ -30,6 +30,26 @@ class ConverterTests {
     }
 
     @Test
+    fun `number 45 should equal roman number XLV`() {
+        assertThat(converter.convertFromArabicToRoman(45)).isEqualTo("XLV")
+    }
+
+    @Test
+    fun `number 78 should equal roman number LXXVIII`() {
+        assertThat(converter.convertFromArabicToRoman(78)).isEqualTo("LXXVIII")
+    }
+
+    @Test
+    fun `number 296 should equal roman number CCXCVI`() {
+        assertThat(converter.convertFromArabicToRoman(296)).isEqualTo("CCXCVI")
+    }
+
+    @Test
+    fun `number 691 should equal roman number DCXCI`() {
+        assertThat(converter.convertFromArabicToRoman(691)).isEqualTo("DCXCI")
+    }
+
+    @Test
     fun `number 3425 should equal roman number MMMCDXXV`() {
         assertThat(converter.convertFromArabicToRoman(3425)).isEqualTo("MMMCDXXV")
     }
