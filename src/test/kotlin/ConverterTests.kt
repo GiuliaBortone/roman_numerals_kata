@@ -5,6 +5,11 @@ class ConverterTests {
     private val converter = Converter()
 
     @Test
+    fun `number 0 should equal empty string`() {
+        assertThat(converter.convertFromArabicToRoman(0)).isEqualTo("")
+    }
+
+    @Test
     fun `number 1 should equal roman number I`() {
         assertThat(converter.convertFromArabicToRoman(1)).isEqualTo("I")
     }
@@ -52,5 +57,10 @@ class ConverterTests {
     @Test
     fun `number 3425 should equal roman number MMMCDXXV`() {
         assertThat(converter.convertFromArabicToRoman(3425)).isEqualTo("MMMCDXXV")
+    }
+
+    @Test
+    fun `number 3999 should equal roman number MMMXMXCIX`() {
+        assertThat(converter.convertFromArabicToRoman(3999)).isEqualTo("MMMCMXCIX")
     }
 }
