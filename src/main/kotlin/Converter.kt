@@ -36,12 +36,12 @@ class Converter {
 
     fun convertFromArabicToRoman(arabicNumber: Int): String {
         val currentRomanNumber = ""
-        return recursion(arabicNumber, currentRomanNumber, romanNotationUpperLimit)
+        return convertRecursively(arabicNumber, currentRomanNumber, romanNotationUpperLimit)
     }
 
-    fun recursion(arabicNumber: Int, romanNumber: String, divider: Int): String {
+    private fun convertRecursively(arabicNumber: Int, romanNumber: String, divider: Int): String {
         if (divider == 1) return romanNumber + numbersDictionaryArabicToRoman[arabicNumber]
-        return recursion(
+        return convertRecursively(
             arabicNumber % divider,
             romanNumber + numbersDictionaryArabicToRoman[arabicNumber / divider * divider],
             divider / 10
